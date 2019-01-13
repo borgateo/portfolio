@@ -1,0 +1,218 @@
+/* --- RESET --- */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* --- FONTS --- */
+
+@font-face {
+  font-family: 'Libre Baskerville';
+  src: url('./fonts/LibreBaskerville-Bold.woff2') format('woff2'),
+      url('./fonts/LibreBaskerville-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Libre Baskerville';
+  src: url('./fonts/LibreBaskerville-Italic.woff2') format('woff2'),
+      url('./fonts/LibreBaskerville-Italic.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Libre Baskerville';
+  src: url('./fonts/LibreBaskerville-Regular.woff2') format('woff2'),
+      url('./fonts/LibreBaskerville-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* -------------- */
+
+body {
+  --color-text: #333;
+  --color-bg: #FBFDF9;
+  --color-textlink: #F9E254;
+
+  font-family: 'Libre Baskerville', serif;
+  font-size: 17px;
+  color: #333;
+  color: var(--color-text);
+  background-color: #FBFDF9;
+  background-color: var(--color-bg);
+  letter-spacing: -0.005rem;
+}
+
+h1, h2, h3, h4 {
+  margin: 1.414em 0 0.5em;
+  font-weight: inherit;
+  line-height: 1.2;
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 3.998em;
+  line-height: 1.5;
+  
+}
+
+h2 {
+  font-size: 2.827em;
+}
+
+h3 {
+  font-size: 1.999em;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-text);
+  font-weight: bold;
+}
+
+a.underscore {
+  border-bottom: 3px solid var(--color-textlink);
+  box-shadow: inset 0 -0.35em 0 var(--color-textlink);
+  transition: all 0.25s cubic-bezier(0.2, 1, 0.8, 1);
+}
+
+a.underscore:hover {
+  background-color: var(--color-textlink);
+}
+
+.content {
+  padding: 0 3rem;
+  max-width: 1220px;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* -------------------- */
+#navigation {
+  padding: 2.5rem 3rem;
+  max-width: 1220px;
+}
+  nav {
+    float: right;
+  }
+  nav a {
+    margin: 0 1rem;
+    font-size: 1.25em;
+  }
+
+  .logo {
+    float: left;
+    font-size: 1.25em;
+    position: relative;
+  }
+  .logo a {
+    color: var(--color-textlink);
+  }
+  .logo::before {
+    content: "";
+    width: 1em;
+    height: 1em;
+    position: absolute;
+    padding: .75em;
+    top: -0.75rem;
+    left: -0.45rem;
+    background: var(--color-text);
+    z-index: -1;
+    transform: rotate(-45deg);
+    border-radius: 3px;
+  }
+
+/* ------------------- */
+
+#logo {
+  font-family: 'Serif', serif;
+  font-size: 1.25em;
+  position: absolute;
+  z-index: 1;
+}
+
+#logo a {
+  color: var(--color-text);
+}
+
+
+#intro {
+  position: absolute;
+  top: 35vh;
+}
+
+#column-content {
+  position: absolute;
+  top: 15vh;
+  margin-bottom: 5rem;
+}
+
+  #column-content h1 {
+    position: relative;
+    margin-bottom: 3rem;
+    padding-bottom: 0.5rem;
+  }
+
+    #column-content h1:after {
+      content: "";
+      width: 100%;
+      height: 5px;
+      background-color: var(--color-text);
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+
+.description {
+  margin-top: 1.5rem;
+  width: 400px;
+  text-align: justify;
+  line-height: 1.35;
+}
+
+.social {
+  border-top: 2px solid black;
+  border-bottom: 5px solid black;
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+}
+
+.reference {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Media Queries */
+@media only screen and (max-width: 768px) {
+  body {
+    font-size: 13px; 
+  }
+}
